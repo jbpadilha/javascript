@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="showTime();">
+        <div id="header">
+            <div style="display: inline-block; width: 40%;">
+                <form onchange="resizeDiv()">
+                    <div style="display: table-cell;" class="title">Position:</div>
+                    <div style="display: table-cell;">
+                        <input type="radio" name="floatDivCheck" value="1" checked>
+                        <label for="center" class="options">Center</label>
+                    </div>
+                    <div style="display: table-cell;">
+                        <input type="radio" name="floatDivCheck" value="2">
+                        <label for="lower" class="options">Lower Right</label>
+                    </div>
+                </form>
+            </div>
+            <div style="display: inline-block">
+                <div class="pressEsc">Press ESC key to hide the window. Enter to show it again</div>
+            </div>
+            <div id="clockDisplay" style="float: right;margin-top: 10px;margin-right: 5px;"></div>
+        </div>
+        <div id="center">
+            <div id="floatingDiv" class="floatingDiv floatingDivCenter" ondrop="drop(event);" ondragover="allowDrop(event);">
+                <div style="color: black;height: 90%;">Floating</div>
+                <div style="text-align: right;">Drag me around...</div>
+            </div>
+        </div>
+        <div id="footer"></div>
+        <script src="scriptFile.js"></script>
+        <script type="text/javascript">
+            dragElement(document.getElementById("floatingDiv"));
+            showTime();
+        </script>
+    </body>
+</html>
